@@ -7,13 +7,13 @@ This project implements a Monopoly simulation designed for Large Language Models
 ### Cloning the Repository
 Before logging into PACE, make sure to join Georgia Tech's VPN first
 
-Login to PACE:
+Login to PACE
 ```bash
 ssh <GT_USERNAME>@login-ice.pace.gatech.edu
 salloc --gres=gpu:H100:1 --ntasks-per-node=1 --time=1:00:00
 ```
 
-Setup SSH keys:
+Setup SSH keys
 ```bash
 ssh-keygen -t ed25519 -C "<your_email@example.com>"
 ```
@@ -124,3 +124,4 @@ python game.py
 Since our project is creating a custom Monopoly agent, we do not utilize any existing dataset. We evaluate the performance of our agents by having them play many simulations against a default heuristic bot (created by ourselves). 20 games (capped at 100 rounds) are ran for each LLM. Various metrics are tracked, such as win rate, number of actions (and sub-actions) made each game, inference time, game duration, etc. Win rate is used as the main statistic for determining agent ability, with our ensemble agent having the highest winrate at 60% against the benchmark agent. We were limited to 20 trials due to the long inference time of trials (12-15 minutes per game), so the variance of Monopoly as a heavily luck-based game could not be completely eliminated.
 
 ---
+
